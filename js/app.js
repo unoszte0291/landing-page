@@ -13,19 +13,44 @@
  * 
 */
 
+// Hovering the cursor over the article makes the article easier to read.
 /**
- * Define Global Variables
+ * Start section effect-2
  * 
 */
 
+function changeSection(){
+  for (i = 1; i <= 4; i++) {
+      let elem = document.getElementById("section" + i);
+        elem.addEventListener('mouseover', () => {
+        elem.style.backgroundColor = "orange";
+        elem.style.fontSize = "large";
+      });
+    }
+};
+
+function revertSection(){
+  for (i = 1; i <= 4; i++) {
+      let elem = document.getElementById("section" + i);
+        elem.addEventListener('mouseout', () => {
+        elem.style.backgroundColor = "";
+        elem.style.fontSize = "";
+      });
+    }
+};
 /**
- * End Global Variables
- * Start Helper Functions
+ * End section effect-2
+ * 
+*/
+
+// When you hover the cursor over the menu, the color changes.
+/**
+ * Start navigation helper
  * 
 */
 function changeColor(){
     for (i = 1; i <= 4; i++) {
-        const elem = document.getElementById("nav" + i);
+        let elem = document.getElementById("nav" + i);
         elem.addEventListener("mouseover", function (event) {
           event.target.style.backgroundColor = "#000d3c";
           event.target.style.color = "white";
@@ -35,49 +60,50 @@ function changeColor(){
 
 function revertColor(){
     for (i = 1; i <= 4; i++) {
-        const elem = document.getElementById("nav" + i);
+        let elem = document.getElementById("nav" + i);
         elem.addEventListener("mouseout", function (event) {
           event.target.style.backgroundColor = null;
           event.target.style.color = null;
         }, false);
       }
 };
-
 /**
- * End Helper Functions
- * Begin Main Functions
+ * End navigation helper
  * 
 */
 
-// build the nav
-const scrollAnimationElm = document.querySelectorAll('.landing__container');
-const scrollAnimationFunc = function(){
-  for(const i = 0; i < scrollAnimationElm.length; i++) {
-    const triggerMargin = 100;
+// Scroll the page and each article of section will appear.
+/**
+ * start section effect-1
+ * 
+*/
+
+let scrollAnimationElm = document.querySelectorAll('.sa');
+let scrollAnimationFunc = function() {
+  for(let i = 0; i < scrollAnimationElm.length; i++) {
+    let triggerMargin = 580;
     if (window.innerHeight > scrollAnimationElm[i].getBoundingClientRect().top + triggerMargin) {
       scrollAnimationElm[i].classList.add('show');
     }
   }
 }
 window.addEventListener('load', scrollAnimationFunc);
-window.addEventListener('scroll', scrollAnimationFunc)
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
+window.addEventListener('scroll', scrollAnimationFunc);
 
 /**
- * End Main Functions
+ * End section effect-1
  * Begin Events
  * 
 */
 
-// Build menu 
+const button1 =  document.getElementById('section');
 
-// Scroll to section on link click
+    button1.addEventListener('mouseout', () => {
+      button1.style.backgroundColor = "";
+      button1.style.fontSize = "";
+    });
 
-// Set sections as active
-
-
+    button1.addEventListener('mouseover', () => {
+      button1.style.backgroundColor = "orange";
+      button1.style.fontSize = "large";
+    });
