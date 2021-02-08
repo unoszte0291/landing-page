@@ -13,33 +13,27 @@
  * 
 */
 
-// Hovering the cursor over the article makes the article easier to read.
+// Creating a navigation bar.
 /**
  * Start section effect-2
  * 
 */
+let navToggle = document.querySelector(".nav__toggle");
+let navWrapper = document.querySelector(".nav__wrapper");
 
-function changeSection(){
-  for (i = 1; i <= 4; i++) {
-      let elem = document.getElementById("section" + i);
-        elem.addEventListener('mouseover', () => {
-        elem.style.backgroundColor = "orange";
-        elem.style.fontSize = "large";
-      });
-    }
-};
-
-function revertSection(){
-  for (i = 1; i <= 4; i++) {
-      let elem = document.getElementById("section" + i);
-        elem.addEventListener('mouseout', () => {
-        elem.style.backgroundColor = "";
-        elem.style.fontSize = "";
-      });
-    }
-};
+navToggle.addEventListener("click", function () {
+  if (navWrapper.classList.contains("active")) {
+    this.setAttribute("aria-expanded", "false");
+    this.setAttribute("aria-label", "menu");
+    navWrapper.classList.remove("active");
+  } else {
+    navWrapper.classList.add("active");
+    this.setAttribute("aria-label", "close menu");
+    this.setAttribute("aria-expanded", "true");
+  }
+});
 /**
- * End section effect-2
+ * End navigation helper
  * 
 */
 
@@ -48,25 +42,24 @@ function revertSection(){
  * Start navigation helper
  * 
 */
+
 function changeColor(){
-    for (i = 1; i <= 4; i++) {
-        let elem = document.getElementById("nav" + i);
-        elem.addEventListener("mouseover", function (event) {
-          event.target.style.backgroundColor = "#000d3c";
-          event.target.style.color = "white";
-        }, false);
-      }
-};
+      let elem = document.getElementById("navbar");
+      elem.addEventListener('mouseover', () => {
+        elem.style.backgroundColor = "#000d3c";
+        elem.style.color = "white";
+      });
+    };
 
 function revertColor(){
-    for (i = 1; i <= 4; i++) {
-        let elem = document.getElementById("nav" + i);
-        elem.addEventListener("mouseout", function (event) {
-          event.target.style.backgroundColor = null;
-          event.target.style.color = null;
-        }, false);
-      }
-};
+      let elem = document.getElementById("navbar");
+        elem.addEventListener('mouseout', () => {
+        elem.style.backgroundColor = "";
+        elem.style.color = "";
+      });
+    };
+
+
 /**
  * End navigation helper
  * 
@@ -96,14 +89,32 @@ window.addEventListener('scroll', scrollAnimationFunc);
  * 
 */
 
-const button1 =  document.getElementById('section');
+// Hovering the cursor over the article makes the article easier to read.
+/**
+ * Start section effect-2
+ * 
+*/
 
-    button1.addEventListener('mouseout', () => {
-      button1.style.backgroundColor = "";
-      button1.style.fontSize = "";
-    });
+function changeSection(){
+  for (i = 1; i <= 4; i++) {
+      let elem = document.getElementById("section" + i);
+        elem.addEventListener('mouseover', () => {
+        elem.style.backgroundColor = "orange";
+        elem.style.fontSize = "large";
+      });
+    }
+};
 
-    button1.addEventListener('mouseover', () => {
-      button1.style.backgroundColor = "orange";
-      button1.style.fontSize = "large";
-    });
+function revertSection(){
+  for (i = 1; i <= 4; i++) {
+      let elem = document.getElementById("section" + i);
+        elem.addEventListener('mouseout', () => {
+        elem.style.backgroundColor = "";
+        elem.style.fontSize = "";
+      });
+    }
+};
+/**
+ * End section effect-2
+ * 
+*/
