@@ -5,7 +5,6 @@
 ・styles.css<br>
 ・app.js<br>
 <br>
-* [Instructions](#instructions)
 
 ## Instructions
 This is project of learning Front End Web Debelopper course by Udacity.
