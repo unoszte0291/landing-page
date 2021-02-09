@@ -42,7 +42,6 @@ navToggle.addEventListener("click", function () {
  * Start navigation helper
  * 
 */
-
 function changeColor(){
       let elem = document.getElementById("navbar");
       elem.addEventListener('mouseover', () => {
@@ -58,7 +57,26 @@ function revertColor(){
         elem.style.color = "";
       });
     };
+  
+    window.addEventListener('load',()=>{  // loading index.html
 
+      const elems = document.querySelectorAll('[hovercolor]'); // hovercolor attribute
+  
+      elems.forEach((e)=>{  // 
+  
+          e.addEventListener('mouseover',()=>{
+            e.style.backgroundColor = e.getAttribute('hovercolor');
+              e.style.color = "white";
+              // backgroung and text color for 'e'
+          });
+  
+          e.addEventListener('mouseout',()=>{
+              e.style.backgroundColor = "";
+              e.style.color = "";
+          });
+  
+      });
+  });
 
 /**
  * End navigation helper
