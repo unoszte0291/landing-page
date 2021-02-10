@@ -64,7 +64,6 @@ function revertSection(){<br>
       });<br>
     }<br>
 };<br>
-<br>
 </p>
 <p>
 </code><br>
