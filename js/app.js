@@ -15,23 +15,22 @@
 
 // Creating a navigation bar.
 /**
- * Start section effect-2
+ * Start section navigation bar.
  * 
 */
-// ul要素を作成
 let ul_element = document.createElement('ul');
 
 for(let i=1; i<=4; i++) {
 	let li_element = document.createElement('li');
 	li_element.textContent = 'Section' + i;
 	ul_element.appendChild(li_element);
+  li_element.setAttribute("id", "nav" + i);
 }
 
-// 作成したHTML要素をarticle要素に追加する
 let navarea = document.getElementById('nav');
 navarea.appendChild(ul_element);
 /**
- * End navigation helper
+ * End navigation bar.
  * 
 */
 
@@ -86,37 +85,23 @@ function revertSection(){
  * 
 */
 
-// Creating a navigation bar.
+// Creating a navigation helper.
 /**
- * Start section effect-2
+ * Start section navigation helper
  * 
 */
-function clicknav(){
+window.addEventListener('load', (event) => {
   for (i = 1; i <= 4; i++) {
-      let elem = document.getElementById("nav" + i);
-        elem.addEventListener('click', function(ev){
-      });
-    };
-  };
+      let navelem = document.getElementById("nav" + i);
+      let sec_elem = document.getElementById("section" + i);
+          navelem.addEventListener('click', () => {
+          let sec_elem_position = sec_elem.getBoundingClientRect();
 
-function ev(){
-  for (i = 1; i <= 4; i++) {
-    let s = ev.target;
-    if (a.href && a.classList.contains('rapid')) {
-    ev.preventDefault();
-     a.click();
-      };
-  };
-};
+        window.scrollTo( 0, sec_elem_position.top);
+          });
+    };
+});
 /**
  * End navigation helper
  * 
 */
-window.addEventListener('mousedown', function(ev){
-  var a = ev.target;
-  if (a.href && a.classList.contains('rapid')) {
-  ev.preventDefault();
-  a.click();
-  }
-  }, false)
-
