@@ -1,20 +1,20 @@
 # Landing Page Project
 
 ## Table of Contents
-・index.html
-・styles.css
-・app.js
-
-* [Instructions](#instructions)
-
-## Instructions
-This is project of learning Front End Web Debelopper course by Udacity.
-I made some Javascript functions below.
-
-1. Creating a navigation bar.
- <code>let ul_element = document.createElement('ul');
-
-for(let i=1; i<=4; i++) {
+・index.html<br>
+・styles.css<br>
+・app.js<br>
+<br>
+* [Instructions](#instructions)<br>
+<br>
+## Instructions<br>
+This is project of learning Front End Web Debelopper course by Udacity.<br>
+I made some Javascript functions below.<br>
+<br>
+1. Creating a navigation bar.<br>
+ <code>let ul_element = document.createElement('ul');<br>
+<br>
+for(let i=1; i<=4; i++) {<br>
 	let li_element = document.createElement('li');
 	li_element.textContent = 'Section' + i;
 	ul_element.appendChild(li_element);
