@@ -18,66 +18,18 @@
  * Start section effect-2
  * 
 */
-let navToggle = document.querySelector(".nav__toggle");
-let navWrapper = document.querySelector(".nav__wrapper");
+// ul要素を作成
+let ul_element = document.createElement('ul');
 
-navToggle.addEventListener("click", function () {
-  if (navWrapper.classList.contains("active")) {
-    this.setAttribute("aria-expanded", "false");
-    this.setAttribute("aria-label", "menu");
-    navWrapper.classList.remove("active");
-  } else {
-    navWrapper.classList.add("active");
-    this.setAttribute("aria-label", "close menu");
-    this.setAttribute("aria-expanded", "true");
-  }
-});
-/**
- * End navigation helper
- * 
-*/
+for(let i=1; i<=4; i++) {
+	let li_element = document.createElement('li');
+	li_element.textContent = 'Section' + i;
+	ul_element.appendChild(li_element);
+}
 
-// When you hover the cursor over the menu, the color changes.
-/**
- * Start navigation helper
- * 
-*/
-function changeColor(){
-      let elem = document.getElementById("navbar");
-      elem.addEventListener('mouseover', () => {
-        elem.style.backgroundColor = "#000d3c";
-        elem.style.color = "white";
-      });
-    };
-
-function revertColor(){
-      let elem = document.getElementById("navbar");
-        elem.addEventListener('mouseout', () => {
-        elem.style.backgroundColor = "";
-        elem.style.color = "";
-      });
-    };
-  
-    window.addEventListener('load',()=>{  // loading index.html
-
-      const elems = document.querySelectorAll('[hovercolor]'); // hovercolor attribute
-  
-      elems.forEach((e)=>{  // 
-  
-          e.addEventListener('mouseover',()=>{
-            e.style.backgroundColor = e.getAttribute('hovercolor');
-              e.style.color = "white";
-              // backgroung and text color for 'e'
-          });
-  
-          e.addEventListener('mouseout',()=>{
-              e.style.backgroundColor = "";
-              e.style.color = "";
-          });
-  
-      });
-  });
-
+// 作成したHTML要素をarticle要素に追加する
+let navarea = document.getElementById('nav');
+navarea.appendChild(ul_element);
 /**
  * End navigation helper
  * 
@@ -88,7 +40,6 @@ function revertColor(){
  * start section effect-1
  * 
 */
-
 let scrollAnimationElm = document.querySelectorAll('.sa');
 let scrollAnimationFunc = function() {
   for(let i = 0; i < scrollAnimationElm.length; i++) {
@@ -100,7 +51,6 @@ let scrollAnimationFunc = function() {
 }
 window.addEventListener('load', scrollAnimationFunc);
 window.addEventListener('scroll', scrollAnimationFunc);
-
 /**
  * End section effect-1
  * Begin Events
@@ -112,7 +62,6 @@ window.addEventListener('scroll', scrollAnimationFunc);
  * Start section effect-2
  * 
 */
-
 function changeSection(){
   for (i = 1; i <= 4; i++) {
       let elem = document.getElementById("section" + i);
@@ -136,3 +85,38 @@ function revertSection(){
  * End section effect-2
  * 
 */
+
+// Creating a navigation bar.
+/**
+ * Start section effect-2
+ * 
+*/
+function clicknav(){
+  for (i = 1; i <= 4; i++) {
+      let elem = document.getElementById("nav" + i);
+        elem.addEventListener('click', function(ev){
+      });
+    };
+  };
+
+function ev(){
+  for (i = 1; i <= 4; i++) {
+    let s = ev.target;
+    if (a.href && a.classList.contains('rapid')) {
+    ev.preventDefault();
+     a.click();
+      };
+  };
+};
+/**
+ * End navigation helper
+ * 
+*/
+window.addEventListener('mousedown', function(ev){
+  var a = ev.target;
+  if (a.href && a.classList.contains('rapid')) {
+  ev.preventDefault();
+  a.click();
+  }
+  }, false)
+
