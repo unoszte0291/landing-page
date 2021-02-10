@@ -60,6 +60,7 @@ function revertSection(){<br>
     }<br>
 };<br>
 <br>
+<p>
 </code><br>
 4. When you click each navigation menu, you can junp to each articles.<br>
 <code><br>
@@ -75,3 +76,4 @@ window.addEventListener('load', (event) => {<br>
     };<br>
 });<br>
 </code>
+</P>
