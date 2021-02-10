@@ -23,6 +23,7 @@ for(let i=1; i<=4; i++) {<br>
 <br>
 let navarea = document.getElementById('nav');<br>
 navarea.appendChild(ul_element);<br>
+<br>
 </code><br>
 2. Scroll the page and each article of section will appear.<br>
 <code>let scrollAnimationElm = document.querySelectorAll('.sa');<br>
@@ -36,6 +37,7 @@ let scrollAnimationFunc = function() {<br>
 }<br>
 window.addEventListener('load', scrollAnimationFunc);<br>
 window.addEventListener('scroll', scrollAnimationFunc);<br>
+<br>
 </code><br>
 3. Hovering the cursor over the article makes the article easier to read.<br>
 <code>function changeSection(){<br>
@@ -57,6 +59,7 @@ function revertSection(){<br>
       });<br>
     }<br>
 };<br>
+<br>
 </code><br>
 4. When you click each navigation menu, you can junp to each articles.<br>
 <code><br>
