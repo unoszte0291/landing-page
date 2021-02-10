@@ -11,6 +11,7 @@
 This is project of learning Front End Web Debelopper course by Udacity.<br>
 I made some Javascript functions below.<br>
 <br>
+<p>
 1. Creating a navigation bar.<br>
  <code>let ul_element = document.createElement('ul');<br>
 <br>
@@ -25,6 +26,8 @@ let navarea = document.getElementById('nav');<br>
 navarea.appendChild(ul_element);<br>
 <br>
 </code><br>
+</p>
+<p>
 2. Scroll the page and each article of section will appear.<br>
 <code>let scrollAnimationElm = document.querySelectorAll('.sa');<br>
 let scrollAnimationFunc = function() {<br>
@@ -39,6 +42,8 @@ window.addEventListener('load', scrollAnimationFunc);<br>
 window.addEventListener('scroll', scrollAnimationFunc);<br>
 <br>
 </code><br>
+</p>
+<p>
 3. Hovering the cursor over the article makes the article easier to read.<br>
 <code>function changeSection(){<br>
   for (i = 1; i <= 4; i++) {<br>
@@ -60,6 +65,7 @@ function revertSection(){<br>
     }<br>
 };<br>
 <br>
+</p>
 <p>
 </code><br>
 4. When you click each navigation menu, you can junp to each articles.<br>
