@@ -18,17 +18,21 @@
  * Start section navigation bar.
  * 
 */
-let ul_element = document.createElement('ul');
 
-for(let i=1; i<=4; i++) {
-	let li_element = document.createElement('li');
-	li_element.textContent = 'Section' + i;
-	ul_element.appendChild(li_element);
-  li_element.setAttribute("id", "nav" + i);
+const sections = document.querySelectorAll('section');
+let ul_element = document.createElement("ul");
+
+for (let i = 1; i<=sections.length; i++) {
+    let li_element = document.createElement("li");
+    li_element.textContent = "Section" + i;
+    ul_element.appendChild(li_element);
+    li_element.setAttribute("id", "nav" + i);
 }
 
-let navarea = document.getElementById('nav');
+let navarea = document.getElementById("nav");
 navarea.appendChild(ul_element);
+
+
 /**
  * End navigation bar.
  * 
@@ -56,30 +60,34 @@ window.addEventListener('scroll', scrollAnimationFunc);
  * 
 */
 
-// Hovering the cursor over the article makes the article easier to read.
+// Scrolling the cursor over the article makes the article easier to read.
 /**
  * Start section effect-2
  * 
 */
-function changeSection(){
-  for (i = 1; i <= 4; i++) {
-      let elem = document.getElementById("section" + i);
-        elem.addEventListener('mouseover', () => {
-        elem.style.backgroundColor = "orange";
-        elem.style.fontSize = "large";
-      });
+const sections_2 = document.querySelectorAll("section");
+// Add class 'active' to section when it is near top of viewport
+function makeActive() {
+    for (const section of sections_2) {
+        const box = section.getBoundingClientRect();
+        // You can play with the values in the "if" condition to further make it more accurate.
+        if (box.top <= 150 && box.bottom >= 150) {
+            // Apply active state on the current section and the corresponding Nav link.
+            section.style.backgroundColor = "orange";
+            section.style.fontSize = "large";
+        } else {
+            // Remove active state from other section and corresponding Nav link.
+            section.style.backgroundColor = "";
+            section.style.fontSize = "";
+        }
     }
-};
+}
 
-function revertSection(){
-  for (i = 1; i <= 4; i++) {
-      let elem = document.getElementById("section" + i);
-        elem.addEventListener('mouseout', () => {
-        elem.style.backgroundColor = "";
-        elem.style.fontSize = "";
-      });
-    }
-};
+// Make sections active
+document.addEventListener("scroll", function () {
+    makeActive();
+});
+
 /**
  * End section effect-2
  * 
@@ -90,17 +98,28 @@ function revertSection(){
  * Start section navigation helper
  * 
 */
-window.addEventListener('load', (event) => {
-  for (i = 1; i <= 4; i++) {
-      let navelem = document.getElementById("nav" + i);
-      let sec_elem = document.getElementById("section" + i);
-          navelem.addEventListener('click', () => {
-          let sec_elem_position = sec_elem.getBoundingClientRect();
 
-        window.scrollTo( 0, sec_elem_position.top);
-          });
-    };
+window.addEventListener("load", (event) => {
+  const sections = document.querySelectorAll("section");
+    for (let i = 1; i <= sections.length; i++) {
+        let navelem = document.getElementById("nav" + i);
+        let sec_elem = document.getElementById("section" + i);
+        navelem.addEventListener("click", (e) => {
+            e.preventDefault();
+            let sec_elem_position = sec_elem.getBoundingClientRect();
+
+            // window.scrollTo( 0, sec_elem_position.top);
+            window.scrollTo({
+                top: sec_elem_position.top,
+                left: 0,
+                behavior: "smooth",
+            });
+        });
+    }
 });
+
+
+
 /**
  * End navigation helper
  * 
