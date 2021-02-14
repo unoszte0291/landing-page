@@ -1,9 +1,9 @@
 # Landing Page Project
 
 ## Table of Contents
-・index.html
-・styles.css
-・app.js
+・index.html<br>
+・styles.css<br>
+・app.js<br>
 
 * [Instructions](#instructions)
 
